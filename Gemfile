@@ -20,4 +20,6 @@ group :test do
   gem "cucumber-rails"
   gem "capybara"
   gem "pickle"
+  gem "factory_girl_rails"
+  gem "shoulda-matchers"
 end
