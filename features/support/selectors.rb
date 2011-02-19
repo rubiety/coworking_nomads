@@ -1,0 +1,22 @@
+module HtmlSelectorsHelper
+  def selector_for(scope)
+    case scope
+      
+    # Generic Mappings:
+    when "the body"
+      "html > body"
+    when "the first row of the table"
+      "table.data tbody tr:first"
+    when "the header links"
+      "header#header nav"
+    when "the flash messages"
+      "#flash"
+    
+    else
+      raise "Can't find mapping from \"#{scope}\" to a selector.\n" +
+        "Now, go and add a mapping in #{__FILE__}"
+    end
+  end
+end
+
+World(HtmlSelectorsHelper)

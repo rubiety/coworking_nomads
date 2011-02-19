@@ -9,6 +9,8 @@ gem "haml", ">= 3.0.0"
 gem "haml-rails"
 gem "compass", ">= 0.10.6"
 gem "html5-boilerplate"
+gem "hpricot"
+gem "ruby_parser"
 
 group :development do
   gem "ruby-debug19"
@@ -16,9 +18,12 @@ group :development do
 end
 
 group :test do
+  gem "faker"
   gem "rspec-rails", ">= 2.0.1"
   gem "cucumber-rails"
   gem "capybara"
+  gem "database_cleaner"
+  gem "launchy"
   gem "pickle"
   gem "factory_girl_rails"
   gem "shoulda-matchers"
