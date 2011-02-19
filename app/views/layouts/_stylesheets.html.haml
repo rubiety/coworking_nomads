@@ -1,0 +1,6 @@
+-# CSS : implied media="all"
+= stylesheet_link_tag "style.css", :media => "all"
+= stylesheet_link_tag "handheld.css", :media => "handheld"
+
+-# Append your own using content_for :stylesheets
+= yield :stylesheets
