@@ -4,6 +4,13 @@ describe Review do
   it { should belong_to(:venue) }
   it { should belong_to(:user) }
 
+  it { should validate_presence_of(:venue_id) }
+  it { should validate_presence_of(:user_id) }
+  it { should ensure_inclusion_of(:rating).in_range(1..10) }
+  it { should ensure_inclusion_of(:wifi_rating).in_range(1..10) }
+  it { should ensure_inclusion_of(:ambiance_rating).in_range(1..10) }
+  it { should ensure_inclusion_of(:table_availability_rating).in_range(1..10) }
+
   describe "scopes" do
     before do
       @active_review = Factory(:review, :active => true)

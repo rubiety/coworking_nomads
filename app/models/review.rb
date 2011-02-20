@@ -5,6 +5,13 @@ class Review < ActiveRecord::Base
   scope :active, where(:active => true)
   scope :inactive, where(:active => false)
 
+  validates :venue_id, :presence => true
+  validates :user_id, :presence => true
+  validates :rating, :inclusion => 1..10
+  validates :wifi_rating, :inclusion => 1..10
+  validates :ambiance_rating, :inclusion => 1..10
+  validates :table_availability_rating, :inclusion => 1..10
+
   def activate
     update_attribute(:active, true)
   end
