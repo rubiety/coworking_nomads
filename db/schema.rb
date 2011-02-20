@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110220225015) do
+ActiveRecord::Schema.define(:version => 20110220235420) do
 
   create_table "check_ins", :force => true do |t|
     t.integer  "venue_id"
@@ -19,6 +19,9 @@ ActiveRecord::Schema.define(:version => 20110220225015) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "check_ins", ["user_id"], :name => "index_check_ins_on_user_id"
+  add_index "check_ins", ["venue_id"], :name => "index_check_ins_on_venue_id"
 
   create_table "cities", :force => true do |t|
     t.string   "name"
@@ -51,6 +54,9 @@ ActiveRecord::Schema.define(:version => 20110220225015) do
     t.datetime "updated_at"
   end
 
+  add_index "reviews", ["user_id"], :name => "index_reviews_on_user_id"
+  add_index "reviews", ["venue_id"], :name => "index_reviews_on_venue_id"
+
   create_table "users", :force => true do |t|
     t.integer  "city_id"
     t.string   "first_name"
@@ -76,6 +82,7 @@ ActiveRecord::Schema.define(:version => 20110220225015) do
     t.datetime "updated_at"
   end
 
+  add_index "users", ["city_id"], :name => "index_users_on_city_id"
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
@@ -88,6 +95,9 @@ ActiveRecord::Schema.define(:version => 20110220225015) do
     t.datetime "updated_at"
   end
 
+  add_index "venue_suggestions", ["city_id"], :name => "index_venue_suggestions_on_city_id"
+  add_index "venue_suggestions", ["user_id"], :name => "index_venue_suggestions_on_user_id"
+
   create_table "venues", :force => true do |t|
     t.integer  "city_id"
     t.string   "name"
@@ -95,5 +105,7 @@ ActiveRecord::Schema.define(:version => 20110220225015) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "venues", ["city_id"], :name => "index_venues_on_city_id"
 
 end
