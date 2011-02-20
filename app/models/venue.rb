@@ -2,8 +2,8 @@ class Venue < ActiveRecord::Base
   attr_accessible :name
 
   belongs_to :city
-  has_many :reviews
-  has_many :check_ins
+  has_many :reviews, :dependent => :destroy
+  has_many :check_ins, :dependent => :destroy
 
   scope :active, where(:active => true)
   scope :inactive, where(:active => false)

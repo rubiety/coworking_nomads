@@ -4,9 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
   
   belongs_to :city
-  has_many :reviews
-  has_many :venue_suggestions
-  has_many :check_ins
+  has_many :reviews, :dependent => :nullify
+  has_many :venue_suggestions, :dependent => :nullify
+  has_many :check_ins, :dependent => :destroy
 
   def to_s
     name
