@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @city.name
+%p
+  %b Active:
+  = @city.active
+
+%nav#city-admin
+  = link_to 'Dashboard', dashboard_city_path(@city)
+  \|
+  = link_to 'Edit', edit_city_path(@city)
+  \|
+
+  - if @city.active?
+    = link_to 'Deactivate', deactivate_city_path(@city), :method => :post
+  - else
+    = link_to 'Activate', activate_city_path(@city), :method => :post
+
+  \|
+  = link_to 'Delete', city_path(@city), :method => :delete, :confirm => "Are you sure you want to delete this city?"
+  \|
+  = link_to 'Back', cities_path

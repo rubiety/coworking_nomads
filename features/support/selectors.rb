@@ -11,6 +11,10 @@ module HtmlSelectorsHelper
       "header#header nav"
     when "the flash messages"
       "#flash"
+
+    # Cities
+    when "the city admin links"
+      "#city-admin"
     
     else
       raise "Can't find mapping from \"#{scope}\" to a selector.\n" +

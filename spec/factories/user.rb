@@ -1,5 +1,5 @@
 Factory.define :user do |u|
-  # u.association :city
+  u.association :city
   u.first_name { Faker::Name.first_name }
   u.last_name { Faker::Name.last_name }
   u.sequence(:email) {|n| "user#{n}@coworkingnomads.com" }

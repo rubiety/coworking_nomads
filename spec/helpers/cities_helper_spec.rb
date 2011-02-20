@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe HomeHelper do
+describe CitiesHelper do
   
 end

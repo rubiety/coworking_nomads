@@ -8,10 +8,10 @@ Feature: User Registration
     And I fill in "Last Name" with "Hughes"
     And I fill in "Password" with "password"
     And I fill in "Password Confirmation" with "password"
-    # And I select "San Diego" from "City"
+    And I select "San Diego" from "City"
     And I press "Sign Up"
     Then I should see "successfully" within the flash messages
-    # And a user should exist with city: "San Diego", email: "me@bjh.me"
+    And a user should exist with city: city "San Diego", email: "me@bjh.me"
     # And I should be on the city "San Diego"'s that user's edit page
   
   @javascript

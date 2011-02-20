@@ -22,6 +22,10 @@
     = f.label :password_confirmation, "Password Confirmation"
     %br/
     = f.password_field :password_confirmation
+  %p
+    = f.label :city_id, "City"
+    %br/
+    = f.collection_select :city_id, City.active, :id, :name, :include_blank => true
   
   %p= f.submit "Sign Up"
 

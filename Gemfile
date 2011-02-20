@@ -9,8 +9,7 @@ gem "haml", ">= 3.0.0"
 gem "haml-rails"
 gem "compass", ">= 0.10.6"
 gem "html5-boilerplate"
-gem "hpricot"
-gem "ruby_parser"
+gem "cancan"
 
 group :development do
   gem "ruby-debug19"
