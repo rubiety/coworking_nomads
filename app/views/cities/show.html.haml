@@ -7,6 +7,16 @@
   %b Active:
   = @city.active
 
+%section#venues
+  %ul
+    - @venues.each do |venue|
+      %li= link_to venue, city_venue_path(@city, venue)
+
+  %p
+    = link_to "Suggest a Venue", "#"
+  %p
+    = link_to "See All Venues", city_venues_path(@city)
+
 %nav#city-admin
   = link_to 'Dashboard', dashboard_city_path(@city)
   \|

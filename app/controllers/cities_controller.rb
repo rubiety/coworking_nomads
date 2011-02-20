@@ -1,5 +1,6 @@
 class CitiesController < ApplicationController
   load_and_authorize_resource
+
   respond_to :html, :json
   
   def index
@@ -7,6 +8,7 @@ class CitiesController < ApplicationController
   end
   
   def show
+    @venues = @city.venues.accessible_by(current_ability)
     respond_with @city
   end
 

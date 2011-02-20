@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe City do
   it { should have_many(:users) }
+  it { should have_many(:venues) }
   
   it { should validate_presence_of(:name) }
   
@@ -41,5 +42,9 @@ describe City do
       city.deactivate
       city.should_not be_active
     end
+  end
+
+  it "should expose #to_s as name" do
+    described_class.new(:name => "Test").to_s.should == "Test"
   end
 end

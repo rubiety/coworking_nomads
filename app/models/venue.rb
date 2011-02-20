@@ -1,13 +1,13 @@
-class City < ActiveRecord::Base
+class Venue < ActiveRecord::Base
   attr_accessible :name
-  
-  has_many :users
-  has_many :venues
-  
+
+  belongs_to :city
+
   scope :active, where(:active => true)
   scope :inactive, where(:active => false)
-  
+
   validates :name, :presence => true, :uniqueness => true
+  validates :city_id, :presence => true
 
   def to_s
     name
@@ -20,5 +20,5 @@ class City < ActiveRecord::Base
   def deactivate
     update_attribute(:active, false)
   end
-  
+
 end

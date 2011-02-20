@@ -17,6 +17,12 @@ module HtmlSelectorsHelper
       "#city-admin"
     when "the cities list"
       "section#cities"
+
+    # Venues
+    when "the venue admin links"
+      "#venue-admin"
+    when "the venues list"
+      "section#venues"
     
     else
       raise "Can't find mapping from \"#{scope}\" to a selector.\n" +

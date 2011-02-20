@@ -1,0 +1,16 @@
+%h1 #{@venue} within #{@city}
+
+
+%nav#venue-admin
+  = link_to 'Edit', [:edit, @city, @venue]
+  \|
+
+  - if @venue.active?
+    = link_to 'Deactivate', [:deactivate, @city, @venue], :method => :post
+  - else
+    = link_to 'Activate', [:activate, @city, @venue], :method => :post
+
+  \|
+  = link_to 'Delete', [@city, @venue], :method => :delete, :confirm => "Are you sure you want to delete this venue?"
+  \|
+  = link_to 'Back', [@city, :venues]

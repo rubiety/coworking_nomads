@@ -1,0 +1,6 @@
+= form_for [@city, @venue] do |f|
+  .field
+    = f.label :name
+    = f.text_field :name
+  .actions
+    = f.submit (f.object.new_record? ? 'Create Venue' : 'Save Changes')

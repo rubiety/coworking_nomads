@@ -13,9 +13,10 @@
       %td= city.name
       %td= city.active
       %td= link_to 'Show', city
-      %td= link_to 'Edit', edit_city_path(city)
+      %td= link_to 'Edit', [:edit, city]
       %td= link_to 'Destroy', city, :confirm => 'Are you sure?', :method => :delete
 
 %br
 
-= link_to 'Create City', new_city_path
+%p
+  = link_to 'Create City', new_city_path if can?(:create, City)

@@ -4,6 +4,11 @@ CoworkingNomads::Application.routes.draw do
     get :dashboard, :on => :member
     post :activate, :on => :member
     post :deactivate, :on => :member
+
+    resources :venues do
+      post :activate, :on => :member
+      post :deactivate, :on => :member
+    end
   end
 
   devise_for :users

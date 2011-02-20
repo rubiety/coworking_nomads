@@ -1,0 +1,9 @@
+%h1 Venues for #{@city}
+
+%section#venues
+  %ul
+    - @venues.each do |venue|
+      %li= link_to venue, city_venue_path(@city, venue)
+
+  %p
+    = link_to "Create Venue", new_city_venue_path(@city) if can?(:create, @city.venues.new)
