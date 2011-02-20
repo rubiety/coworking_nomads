@@ -1,0 +1,23 @@
+%h1 Listing city_suggestions
+
+%table
+  %tr
+    %th Name
+    %th From name
+    %th From email
+    %th
+    %th
+    %th
+
+  - @city_suggestions.each do |city_suggestion|
+    %tr
+      %td= city_suggestion.name
+      %td= city_suggestion.from_name
+      %td= city_suggestion.from_email
+      %td= link_to 'Show', city_suggestion
+      %td= link_to 'Edit', edit_city_suggestion_path(city_suggestion)
+      %td= link_to 'Destroy', city_suggestion, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New City suggestion', new_city_suggestion_path

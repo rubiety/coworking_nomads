@@ -1,4 +1,5 @@
 CoworkingNomads::Application.routes.draw do
+  resources :city_suggestions
   resources :cities do
     get :dashboard, :on => :member
     post :activate, :on => :member

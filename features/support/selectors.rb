@@ -15,6 +15,8 @@ module HtmlSelectorsHelper
     # Cities
     when "the city admin links"
       "#city-admin"
+    when "the cities list"
+      "section#cities"
     
     else
       raise "Can't find mapping from \"#{scope}\" to a selector.\n" +

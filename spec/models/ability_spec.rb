@@ -6,6 +6,8 @@ describe Ability do
     before { @user = Factory(:user) }
     subject { described_class.new(@user) }
     it { should be_able_to(:read, :all) }
+    it { should_not be_able_to(:read, CitySuggestion) }
+    it { should be_able_to(:create, CitySuggestion) }
     
     it "should be able to :manage self" do
       subject.should be_able_to(:manage, @user)
