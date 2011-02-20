@@ -3,6 +3,7 @@ require "spec_helper"
 describe Venue do
   it { should belong_to(:city) }
   it { should have_many(:reviews) }
+  it { should have_many(:check_ins) }
 
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:city_id) }

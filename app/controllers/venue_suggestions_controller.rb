@@ -1,4 +1,6 @@
 class VenueSuggestionsController < ApplicationController
+  before_filter :authenticate_user!
+
   load_and_authorize_resource :city
   load_and_authorize_resource :venue_suggestion, :through => :city
 

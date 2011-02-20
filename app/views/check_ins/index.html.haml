@@ -1,0 +1,9 @@
+%h1 Check-Ins for #{@venue}
+
+%section#check-ins
+  %ul
+    - @check_ins.each do |check_in|
+      %li #{check_in.user} checked in here on #{check_in.created_at}
+
+%p
+  = link_to "Back to Venue", [@city, @venue]

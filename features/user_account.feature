@@ -15,7 +15,7 @@ Feature: User Account Management
     And I fill in "Twitter" with "coworkingnomads"
     And I fill in "Linked In" with "coworkingnomads"
     And I press "Save Profile"
-    Then I should see "Successful" in the flash messages
+    Then I should see "Successful" within the flash messages
     And a user should exist with first_name: "New", last_name: "Name"
     And I should be on the city "San Diego"'s that user page
   
@@ -25,7 +25,7 @@ Feature: User Account Management
     And I fill in "New Password" with "newpassword"
     And I fill in "Change Password" with "newpassword"
     And I press "Change Password"
-    Then I should see "Successful" in the flash messages
+    Then I should see "Successful" within the flash messages
     And I should be on the city "San Diego"'s that user page
   
   Scenario: Changing My City
@@ -33,7 +33,7 @@ Feature: User Account Management
     And I follow "Change City" within the user navigation
     And I select "Rochester" from "City"
     And I press "Change City"
-    Then I should see "Successful" in the flash messages
+    Then I should see "Successful" within the flash messages
     And that user's city should be city "Rochester"
     And I should be on the city "San Diego"'s that user page
   
@@ -46,5 +46,5 @@ Feature: User Account Management
     And I follow "Delete Account" within the user registration
     And I check "Confirm Deletion"
     And I press "Delete Account"
-    Then I should see "Successful" in the flash messages
+    Then I should see "Successful" within the flash messages
     And I should be on the home page

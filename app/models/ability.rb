@@ -4,20 +4,28 @@ class Ability
   def initialize(current_user)
     if current_user and current_user.admin?
       can :manage, :all
-    else
-      can :read, :all
 
-      can :manage, User do |user|
-        user == current_user
-      end
+    elsif current_user
+      can :read, City, :active => true
+      can :read, Venue, :active => true
+      can :read, [User, Review, CheckIn]
+
+      can :manage, User, :id => current_user.id
 
       can :create, Review
-      can :update, Review do |review|
-        review.user == current_user
-      end
+      can :update, Review, :user_id => current_user.id
       
       can :create, [CitySuggestion, VenueSuggestion]
-      cannot :read, [CitySuggestion, VenueSuggestion]
+
+      can :create, CheckIn
+      can :destroy, CheckIn, :user_id => current_user.id
+    else
+      can :read, City, :active => true
+      can :read, Venue, :active => true
+      can :read, [User, Review, CheckIn]
+
+      can :create, CitySuggestion
+
     end
   end
 end

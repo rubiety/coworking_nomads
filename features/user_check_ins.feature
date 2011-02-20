@@ -1,22 +1,23 @@
-@wip
 Feature: User Checkins
   Background:
-    Given a venue exists with city: "San Diego"
-    And a user exists with city: "San Diego"
+    Given a venue exists with city: the city
+    And a user exists with city: the city
   
-  @javascript
   Scenario: Checking In via the Web
-    When I am logged in as that user
-    And I go to the city "San Diego"'s that venue page
-    And I follow "Check In Here"
-    And I fill in "Comment" with "Great day for coworking!"
+    When I am logged in
+    And I go to the city's venue page
+    And I follow "Check In"
+    And I fill in "Notes" with "Great day for coworking!"
     And I press "Check In Now"
     Then a check in should exist with user: that user, venue: that venue
-    And I should see "Successful" in the flash messages
+    And I should see "successfully" within the flash messages
   
+  @wip
   Scenario: Checking In via Foursquare
   
+  @wip
   Scenario: Checking In via Gowalla
   
+  @wip
   Scenario: Checking In via Facebook
   
