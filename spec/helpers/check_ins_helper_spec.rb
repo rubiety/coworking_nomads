@@ -1,5 +1,5 @@
 require "spec_helper"
 
-describe VenuesHelper do
+describe CheckInsHelper do
 
 end
