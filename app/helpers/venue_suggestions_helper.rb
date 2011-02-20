@@ -1,0 +1,2 @@
+module VenueSuggestionsHelper
+end

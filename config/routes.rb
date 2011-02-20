@@ -9,6 +9,8 @@ CoworkingNomads::Application.routes.draw do
       post :activate, :on => :member
       post :deactivate, :on => :member
     end
+
+    resources :venue_suggestions
   end
 
   devise_for :users

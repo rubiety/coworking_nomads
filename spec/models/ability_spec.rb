@@ -8,6 +8,8 @@ describe Ability do
     it { should be_able_to(:read, :all) }
     it { should_not be_able_to(:read, CitySuggestion) }
     it { should be_able_to(:create, CitySuggestion) }
+    it { should_not be_able_to(:read, VenueSuggestion) }
+    it { should be_able_to(:create, VenueSuggestion) }
     
     it "should be able to :manage self" do
       subject.should be_able_to(:manage, @user)

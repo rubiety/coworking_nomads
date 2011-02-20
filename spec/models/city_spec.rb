@@ -3,6 +3,7 @@ require 'spec_helper'
 describe City do
   it { should have_many(:users) }
   it { should have_many(:venues) }
+  it { should have_many(:venue_suggestions) }
   
   it { should validate_presence_of(:name) }
   

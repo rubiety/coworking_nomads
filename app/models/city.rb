@@ -3,6 +3,7 @@ class City < ActiveRecord::Base
   
   has_many :users
   has_many :venues
+  has_many :venue_suggestions
   
   scope :active, where(:active => true)
   scope :inactive, where(:active => false)

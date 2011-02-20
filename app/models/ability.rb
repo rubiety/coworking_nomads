@@ -10,8 +10,8 @@ class Ability
         user == current_user
       end
 
-      can :create, CitySuggestion
-      cannot :read, CitySuggestion
+      can :create, [CitySuggestion, VenueSuggestion]
+      cannot :read, [CitySuggestion, VenueSuggestion]
     end
   end
 end
