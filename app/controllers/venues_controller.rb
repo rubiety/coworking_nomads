@@ -9,6 +9,7 @@ class VenuesController < ApplicationController
   end
 
   def show
+    @reviews = @venue.reviews.accessible_by(current_ability)
     respond_with @venue
   end
 

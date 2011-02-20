@@ -1,0 +1,28 @@
+= form_for [@city, @venue, @review] do |f|
+  %p
+    = f.label :rating
+    = f.text_field :rating, :size => 2
+  %p
+    = f.label :wifi_rating, "Wifi Rating"
+    = f.text_field :wifi_rating, :size => 2
+  %p
+    = f.label :wifi_notes, "Wifi Notes"
+    = f.text_field :wifi_notes
+  %p
+    = f.label :ambiance_rating, "Ambiance Rating"
+    = f.text_field :ambiance_rating, :size => 2
+  %p
+    = f.label :ambiance_notes, "Ambiance Notes"
+    = f.text_field :ambiance_notes
+  %p
+    = f.label :table_availability_rating, "Table Availability Rating"
+    = f.text_field :table_availability_rating, :size => 2
+  %p
+    = f.label :table_availability_notes, "Table Availability Notes"
+    = f.text_field :table_availability_notes
+  %p
+    = f.label :notes
+    = f.text_area :notes
+
+  %p
+    = f.submit (f.object.new_record? ? "Create Review" : "Save Changes")

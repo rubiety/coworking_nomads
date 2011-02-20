@@ -2,6 +2,7 @@ class Venue < ActiveRecord::Base
   attr_accessible :name
 
   belongs_to :city
+  has_many :reviews
 
   scope :active, where(:active => true)
   scope :inactive, where(:active => false)

@@ -1,6 +1,15 @@
 %h1 #{@venue} within #{@city}
 
 
+%section#reviews
+  %ul
+    - @reviews.each do |review|
+      %li= link_to "Review #{review.id}", [@city, @venue, review]
+  
+  %p
+    = link_to "Create Review", new_city_venue_review_path(@city, @venue)
+
+
 %nav#venue-admin
   = link_to 'Edit', [:edit, @city, @venue]
   \|

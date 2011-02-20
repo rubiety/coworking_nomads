@@ -8,6 +8,8 @@ CoworkingNomads::Application.routes.draw do
     resources :venues do
       post :activate, :on => :member
       post :deactivate, :on => :member
+
+      resources :reviews
     end
 
     resources :venue_suggestions

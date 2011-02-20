@@ -1,17 +1,23 @@
-@wip
 Feature: Reviewing Venues
   Background:
-    Given a user exists with city: "San Diego"
-    And a venue exists with city: "San Diego"
-    And I am logged in as that user
+    Given I am logged in
+    And a venue exists with city: the city
   
   Scenario: Creating a Venue Review
-    When I go to the city "San Diego"'s that venue page
-    And I follow "Create Review" in the reviews list
-    And I fill in "Content" with "This place is great!"
-    And I fill in "Stars" with "5"
-    And I press "Submit Review"
-    Then I should see "Successful" in the flash messages
-    And a review should exist for city: "San Diego", venue: that venue
-    And I should be on the city: "San Diego"'s venue review confirmation page
+    When I go to the city's venue page
+    And I follow "Create Review" within the reviews list
+    And I fill in the following:
+      | Notes                     | This place is great!  |
+      | Rating                    | 10                    |
+      | Wifi Rating               | 10                    |
+      | Wifi Notes                | Wifi is great!        |
+      | Ambiance Rating           | 10                    |
+      | Ambiance Notes            | Ambiance is great!    |
+      | Table Availability Rating | 7                     |
+      | Table Availability Notes  | Hard to find a table. |
+      | Notes                     | Example notes here.   |
+    And I press "Create Review"
+    Then I should see "successfully" within the flash messages
+    And a review should exist with venue: that venue
+    And I should be on the city's venue page
   

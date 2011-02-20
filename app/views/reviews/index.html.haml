@@ -1,0 +1,9 @@
+%h1 Reviews for #{@venue}
+
+%section#reviews
+  %ul
+    - @reviews.each do |review|
+      %li= link_to "Review #{review}", [@city, @venue, review]
+  
+  %p
+    = link_to "Create Review", new_city_venue_review_path(@city, @venue, review)

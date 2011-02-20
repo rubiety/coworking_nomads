@@ -24,6 +24,12 @@ module HtmlSelectorsHelper
     when "the venues list"
       "section#venues"
     
+    # Reviews
+    when "the review admin links"
+      "#review-admin"
+    when "the reviews list"
+      "section#reviews"
+    
     else
       raise "Can't find mapping from \"#{scope}\" to a selector.\n" +
         "Now, go and add a mapping in #{__FILE__}"
