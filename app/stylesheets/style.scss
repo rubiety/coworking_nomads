@@ -1,7 +1,7 @@
 @import "compass";
-@import "compass/reset";
 @import "html5-boilerplate";
 
+@import "partials/resets";
 @import "partials/base";
 @import "partials/fonts";
 @import "partials/tags";
@@ -9,6 +9,7 @@
 @import "partials/form";
 @import "partials/messages";
 
+@import "partials/home";
 @import "partials/cities";
 @import "partials/venues";
 @import "partials/reviews";

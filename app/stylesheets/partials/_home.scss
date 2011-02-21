@@ -1,0 +1,29 @@
+body.home {
+  section#introduction {
+    @include clearfix;
+    
+    h2 {
+      margin-bottom: 10px;
+      font-size: 2em;
+    }
+    
+    article {
+      margin: 10px;
+      width: 30%;
+      @include float-left;
+      
+      h3 { font-size: 1.1em; }
+    }
+  }
+  
+  section#cities {
+    background: #CCC;
+    padding: 5px;
+    @include border-radius(6px, 6px);
+    
+    ul {
+      @include inline-list;
+      li { margin: 0 15px; }
+    }
+  }
+}

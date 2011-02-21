@@ -1,9 +1,24 @@
-%h1 Coworking Nomads
+%section#introduction
+  %h2 We facilitate ad-hoc co-working sessions among independents.
+  %article
+    %h3 Share Your Presence
+    %p
+      Check in to your favorite coworking venues. Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. 
+  %article
+    %h3 Meet Other Coworkers
+    %p
+      Find other co-coworkers in your area to collaborate with.
+  %article
+    %h3 Review Venues
+    %p
+      Integer volutpat ligula eget enim. Suspendisse vitae arcu. Quisque pellentesque. Nullam consequat, sem vitae rhoncus tristique, mauris nulla fermentum est
+
 
 %section#cities
   %ul
     - @cities.each do |city|
       %li= link_to city, city_path(city)
-
-  %p
-    = link_to "Suggest a City", new_city_suggestion_path
+    %li
+      Your city not here? 
+      = link_to "Suggest a City", new_city_suggestion_path
+    

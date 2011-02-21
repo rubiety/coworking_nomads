@@ -1,9 +1,39 @@
-body {}
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0 40px;
+}
 
-#container {}
+#container {
+  margin: 0 auto;
+  width: 960px;
+  background: url(../images/page/background_tile.png) repeat;
+  
+  @include box-shadow;
+}
 
-header {}
+#header {
+  padding: 10px;
+  
+  h1 {
+    font-size: 3em;
+  }
+  
+  nav {
+    background: #CCC;
+    padding: 5px;
+    
+    ul {
+      @include inline-list;
+      li { margin: 0 15px; }
+    }
+  }
+}
 
-#main {}
+#main {
+  padding: 10px;
+}
 
-footer {}
+#footer {
+  padding: 10px;
+  font-size: 0.7em;
+}
