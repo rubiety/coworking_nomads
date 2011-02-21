@@ -10,6 +10,7 @@ gem "haml-rails"
 gem "compass", ">= 0.10.6"
 gem "html5-boilerplate"
 gem "cancan"
+gem "fancy-buttons"
 
 group :development do
   gem "ruby-debug19"

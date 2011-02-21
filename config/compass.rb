@@ -1,5 +1,6 @@
 # This configuration file works with both the Compass command line tool and within Rails.
 require 'html5-boilerplate'
+require 'fancy-buttons'
 
 # Require any additional compass plugins here.
 
