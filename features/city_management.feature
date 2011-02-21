@@ -7,8 +7,7 @@ Feature: Managing Cities
     And I follow "Dashboard" within the city admin links
   
   Scenario: Creating a City
-    When I go to the cities page
-    And I follow "Create City"
+    When I go to the new city page
     And I fill in "Name" with "Williamsport"
     And I press "Create City"
     Then I should see "successfully" within the flash messages
