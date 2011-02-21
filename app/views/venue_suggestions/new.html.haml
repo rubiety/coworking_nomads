@@ -3,9 +3,11 @@
 = form_for [@city, @venue_suggestion] do |f|
   .field
     = f.label :name, "Name"
+    %br/
     = f.text_field :name
   .field
     = f.label :address, "Address"
+    %br/
     = f.text_field :address
 
   .actions

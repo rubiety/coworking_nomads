@@ -1,27 +1,35 @@
 = form_for [@city, @venue, @review] do |f|
   %p
     = f.label :rating
+    %br/
     = f.text_field :rating, :size => 2
   %p
     = f.label :wifi_rating, "Wifi Rating"
+    %br/
     = f.text_field :wifi_rating, :size => 2
   %p
     = f.label :wifi_notes, "Wifi Notes"
+    %br/
     = f.text_field :wifi_notes
   %p
     = f.label :ambiance_rating, "Ambiance Rating"
+    %br/
     = f.text_field :ambiance_rating, :size => 2
   %p
     = f.label :ambiance_notes, "Ambiance Notes"
+    %br/
     = f.text_field :ambiance_notes
   %p
     = f.label :table_availability_rating, "Table Availability Rating"
+    %br/
     = f.text_field :table_availability_rating, :size => 2
   %p
     = f.label :table_availability_notes, "Table Availability Notes"
+    %br/
     = f.text_field :table_availability_notes
   %p
     = f.label :notes
+    %br/
     = f.text_area :notes
 
   %p

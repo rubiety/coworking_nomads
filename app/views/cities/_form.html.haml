@@ -1,6 +1,7 @@
 = form_for @city do |f|
   .field
     = f.label :name
+    %br/
     = f.text_field :name
   .actions
     = f.submit (f.object.new_record? ? 'Create City' : 'Save Changes')
