@@ -1,5 +1,5 @@
 form {
-  div.field {
+  div.field, p {
     margin-bottom: 10px;
   }
   
@@ -32,11 +32,8 @@ form {
     margin: 0 0 -12px 0;
   }
   
-  .checkbox * {
-    display: inline;
-  }
-  
   input[type=submit] {
+    margin-top: 10px;
     @include fancy-button;
   }
 }

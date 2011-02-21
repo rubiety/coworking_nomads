@@ -2,6 +2,9 @@
 
 %nav
   %ul
+    %li= link_to "home", root_path
+    - if @city
+      %li= link_to @city, @city
     %li= link_to "sign up", new_user_registration_path
 
     - if user_signed_in?
