@@ -7,6 +7,8 @@ class City < ActiveRecord::Base
   
   scope :active, where(:active => true)
   scope :inactive, where(:active => false)
+
+  has_friendly_id :name, :use_slug => true, :approximate_ascii => true
   
   validates :name, :presence => true, :uniqueness => true
 
