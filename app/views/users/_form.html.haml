@@ -1,0 +1,28 @@
+= form_for @user do |f|
+  %fieldset
+    %legend Basic Information
+
+    %p
+      = f.label :first_name, "First Name"
+      = f.text_field :first_name
+    %p
+      = f.label :last_name, "Last Name"
+      = f.text_field :last_name
+    %p
+      = f.label :biography, "Biography"
+      = f.text_area :biography
+
+  %fieldset
+    %legend Contact Information
+
+    %p
+      = f.label :website, "Website URL"
+      = f.text_field :website
+    %p
+      = f.label :twitter, "Twitter"
+      = f.text_field :twitter
+    %p
+      = f.label :linked_in, "Linked IN"
+      = f.text_field :linked_in
+  %p
+    = f.submit "Save Profile"

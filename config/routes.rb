@@ -15,9 +15,12 @@ CoworkingNomads::Application.routes.draw do
     end
     
     resources :venue_suggestions, :only => [:index, :new, :create]
+    resources :users
   end
 
   devise_for :users
+
+  resources :users, :except => [:new, :create]
 
   root :to => "home#index"
 end

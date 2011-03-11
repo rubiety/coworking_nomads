@@ -29,6 +29,12 @@ module HtmlSelectorsHelper
       "#review-admin"
     when "the reviews list"
       "section#reviews"
+
+    # Users
+    when "the user admin link"
+      "#user-admin"
+    when "the users list"
+      "section#users"
     
     else
       raise "Can't find mapping from \"#{scope}\" to a selector.\n" +

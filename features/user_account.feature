@@ -1,11 +1,11 @@
 @wip
 Feature: User Account Management
   Background:
-    Given a user exists with city: "San Diego"
-    And I am logged in as that user
+    Given a user exists with city: the city
+    And I am logged in
   
   Scenario: Editing Profile Details
-    When I go to the city "San Diego"'s that user page
+    When I go to the city's user page
     And I follow "Edit Profile" within the user navigation
     And I fill in "First Name" with "New"
     And I fill in "Last Name" with "Name"
@@ -20,8 +20,8 @@ Feature: User Account Management
     And I should be on the city "San Diego"'s that user page
   
   Scenario: Changing My Password
-    When I go to the city "San Diego"'s that user page
-    And I follow "Change Profile" within the user navigation
+    When I go to the city's user page
+    And I follow "Change Password" within the user navigation
     And I fill in "New Password" with "newpassword"
     And I fill in "Change Password" with "newpassword"
     And I press "Change Password"
@@ -29,7 +29,7 @@ Feature: User Account Management
     And I should be on the city "San Diego"'s that user page
   
   Scenario: Changing My City
-    When I go to the city "San Diego"'s that user page
+    When I go to the city's that user page
     And I follow "Change City" within the user navigation
     And I select "Rochester" from "City"
     And I press "Change City"
@@ -38,11 +38,11 @@ Feature: User Account Management
     And I should be on the city "San Diego"'s that user page
   
   Scenario: Changing My Privacy Settings
-    When I go to the city "San Diego"'s that user page
+    When I go to the city's that user page
     And I follow "Privacy Settings" within the user navigation
   
   Scenario: Deleting My Account
-    When I go to the city "San Diego"'s that user page
+    When I go to the city's that user page
     And I follow "Delete Account" within the user registration
     And I check "Confirm Deletion"
     And I press "Delete Account"
