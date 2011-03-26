@@ -28,4 +28,10 @@ group :test do
   gem "pickle"
   gem "factory_girl_rails"
   gem "shoulda-matchers"
+  gem "growl"
+  gem "guard"
+  gem "guard-bundler"
+  gem "guard-cucumber"
+  gem "guard-rspec"
+  gem "guard-spork"
 end
