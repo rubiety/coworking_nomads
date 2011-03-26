@@ -29,6 +29,7 @@ group :test do
   gem "factory_girl_rails"
   gem "shoulda-matchers"
   gem "growl"
+  gem "spork", ">= 0.9.0.rc4"
   gem "guard"
   gem "guard-bundler"
   gem "guard-cucumber"
