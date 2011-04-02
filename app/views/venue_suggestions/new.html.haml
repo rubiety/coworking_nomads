@@ -1,14 +1,6 @@
 %h1 New Venue Suggestion
 
-= form_for [@city, @venue_suggestion] do |f|
-  .field
-    = f.label :name, "Name"
-    %br/
-    = f.text_field :name
-  .field
-    = f.label :address, "Address"
-    %br/
-    = f.text_field :address
-
-  .actions
-    = f.submit 'Submit'
+= simple_form_for [@city, @venue_suggestion] do |f|
+  = f.input :name
+  = f.input :address
+  = f.submit "Submit"

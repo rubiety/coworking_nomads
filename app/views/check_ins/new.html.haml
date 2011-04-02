@@ -1,10 +1,5 @@
 %h1 Check in to #{@venue}
 
-= form_for [@city, @venue, @check_in] do |f|
-  %p
-    = f.label :notes
-    %br/
-    = f.text_area :notes
-  %p
-    = f.submit "Check In Now"
-
+= simple_form_for [@city, @venue, @check_in] do |f|
+  = f.input :notes
+  = f.submit "Check In Now"

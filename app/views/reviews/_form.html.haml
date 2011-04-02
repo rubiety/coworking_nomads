@@ -1,36 +1,10 @@
-= form_for [@city, @venue, @review] do |f|
-  %p
-    = f.label :rating
-    %br/
-    = f.text_field :rating, :size => 2
-  %p
-    = f.label :wifi_rating, "Wifi Rating"
-    %br/
-    = f.text_field :wifi_rating, :size => 2
-  %p
-    = f.label :wifi_notes, "Wifi Notes"
-    %br/
-    = f.text_field :wifi_notes
-  %p
-    = f.label :ambiance_rating, "Ambiance Rating"
-    %br/
-    = f.text_field :ambiance_rating, :size => 2
-  %p
-    = f.label :ambiance_notes, "Ambiance Notes"
-    %br/
-    = f.text_field :ambiance_notes
-  %p
-    = f.label :table_availability_rating, "Table Availability Rating"
-    %br/
-    = f.text_field :table_availability_rating, :size => 2
-  %p
-    = f.label :table_availability_notes, "Table Availability Notes"
-    %br/
-    = f.text_field :table_availability_notes
-  %p
-    = f.label :notes
-    %br/
-    = f.text_area :notes
-
-  %p
-    = f.submit (f.object.new_record? ? "Create Review" : "Save Changes")
+= simple_form_for [@city, @venue, @review] do |f|
+  = f.input :rating, :size => 2
+  = f.input :wifi_rating, :size => 2, :label => "Wifi Rating"
+  = f.input :wifi_notes, :label => "Wifi Notes"
+  = f.input :ambiance_rating, :size => 2, :label => "Ambiance Rating"
+  = f.input :ambiance_notes, :label => "Ambiance Notes"
+  = f.input :table_availability_rating, :size => 2, :label => "Table Availability Rating"
+  = f.input :table_availability_notes, :label => "Table Availability Notes"
+  = f.input :notes
+  = f.submit (f.object.new_record? ? "Create Review" : "Save Changes")
