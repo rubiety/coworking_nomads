@@ -5,6 +5,7 @@ body.home {
     h2 {
       margin-bottom: 10px;
       font-size: 2em;
+      font-family: "Radley", arial, serif;
     }
     
     a#get-started {
@@ -17,7 +18,10 @@ body.home {
       width: 30%;
       @include float-left;
       
-      h3 { font-size: 1.1em; }
+      h3 {
+        font-size: 1.1em;
+        font-family: "Radley", arial, serif;
+      }
     }
   }
   

@@ -1,6 +1,7 @@
 body {
   font-family: Helvetica, Arial, sans-serif;
   margin: 0 40px;
+  background: #CCC;
 }
 
 #container {
@@ -8,7 +9,7 @@ body {
   width: 960px;
   background: url(../images/page/background_tile.png) repeat;
   
-  @include box-shadow;
+  @include box-shadow(#666, 0, 0, 15px, 5px);
 }
 
 #header {
@@ -16,11 +17,13 @@ body {
   
   h1 {
     font-size: 3em;
+    font-family: "Neuton", arial, serif;
   }
   
   nav {
     background: #CCC;
     padding: 5px;
+    @include border-radius(6px);
     
     ul {
       @include inline-list;
@@ -30,6 +33,7 @@ body {
 }
 
 #main {
+  @include clearfix;
   padding: 10px;
 
   #flash {

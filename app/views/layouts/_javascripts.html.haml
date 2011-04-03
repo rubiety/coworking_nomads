@@ -17,7 +17,14 @@
 /[if lt IE 7 ]
   :javascript
     //DD_belatedPNG.fix('img, .png_bg');
-    
+
+-# Google Maps API
+= javascript_include_tag "http://maps.google.com/maps/api/js?v=3.3&sensor=false"
+= javascript_include_tag "maps/marker_manager.js"
+= javascript_include_tag "maps/styled_marker.js"
+= javascript_include_tag "maps/jquery.metadata.js"
+= javascript_include_tag "maps/jquery.jmapping.js"
+
 -#  Append your own using content_for :javascripts
 = yield :javascripts
 
