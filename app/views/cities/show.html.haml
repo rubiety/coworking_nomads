@@ -25,6 +25,7 @@
   
   - @venues.each do |venue|
     %article
+      = image_tag venue.photo.image.url(:small) if venue.photo
       %h2= venue
       = link_to venue, [@city, venue]
   

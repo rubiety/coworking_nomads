@@ -22,6 +22,15 @@ Feature: Managing Venues
     Then I should see "successfully" within the flash messages
     And a venue should exist with city: that city, name: "New Name"
     And I should be on the city's venue page
+
+  Scenario: Adding a Venue Photo
+    Given a venue exists with city: the city
+    When I go to the city's venue page
+    And I follow "Edit" within the venue admin links
+    And I attach the file "spec/support/files/venue_photo.jpg" to "Image"
+    And I press "Save Changes"
+    Then I should see "successfully" within the flash messages
+    And a venue photo should exist with venue: that venue
   
   Scenario: Activating a Venue
     Given a deactivated venue exists with city: the city

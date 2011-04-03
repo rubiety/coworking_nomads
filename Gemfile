@@ -12,6 +12,7 @@ gem "html5-boilerplate"
 gem "cancan"
 gem "fancy-buttons"
 gem "simple_form"
+gem "paperclip"
 gem "friendly_id", "~> 3.2.1"
 
 group :development do

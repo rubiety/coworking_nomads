@@ -1,5 +1,6 @@
 %h1 #{@venue} within #{@city}
 
+= image_tag @venue.photo.image.url(:medium) if @venue.photo
 
 %section#reviews
   %ul

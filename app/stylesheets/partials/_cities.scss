@@ -26,11 +26,16 @@ body.cities {
     }
     
     article {
+      @include clearfix;
       margin-bottom: 5px;
       border: 1px solid;
       padding: 10px;
       
       h2 { font-size: 1.2em; }
+      img {
+        float: left;
+        margin-right: 10px;
+      }
     }
     
     aside {

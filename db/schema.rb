@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110221015224) do
+ActiveRecord::Schema.define(:version => 20110403212457) do
 
   create_table "check_ins", :force => true do |t|
     t.integer  "venue_id"
@@ -97,6 +97,16 @@ ActiveRecord::Schema.define(:version => 20110221015224) do
   add_index "users", ["city_id"], :name => "index_users_on_city_id"
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "venue_photos", :force => true do |t|
+    t.integer  "venue_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "venue_suggestions", :force => true do |t|
     t.integer  "user_id"

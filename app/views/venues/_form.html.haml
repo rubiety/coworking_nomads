@@ -1,3 +1,14 @@
-= simple_form_for [@city, @venue] do |f|
+= simple_form_for [@city, @venue], :html => { :multipart => true } do |f|
   = f.input :name
-  = f.submit (f.object.new_record? ? 'Create Venue' : 'Save Changes')
+
+  = f.simple_fields_for :photo, f.object.try(:photo) || f.object.build_photo do |pf|
+    - if pf.object.new_record?
+      = pf.input :image
+    - else
+      = image_tag pf.object.image.url(:small)
+      = pf.input :_destroy, :as => :boolean, :label => "Delete This Image"
+      = link_to_function "Change", "$(this).next('p.input.file').show(); $(this).remove()"
+      = pf.input :image, :wrapper_html => {:style => "display: none"}
+
+  %p.actions
+    = f.submit (f.object.new_record? ? 'Create Venue' : 'Save Changes')
