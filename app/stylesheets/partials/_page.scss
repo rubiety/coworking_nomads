@@ -41,8 +41,8 @@ body {
       @include no-bullets;
       @include border-radius(4px);
 
-      &.confirm { background-color: #3B9C3B; }
-      &.error { background-color: #A11010; }
+      &.notice { background-color: #3B9C3B; }
+      &.warn { background-color: #A11010; }
     }
   }
 }

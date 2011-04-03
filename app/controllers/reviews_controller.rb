@@ -24,18 +24,18 @@ class ReviewsController < ApplicationController
   def create
     @review.attributes = params[:review]
     @review.user = current_user
-    flash[:confirm] = "Review has been successfully created." if @review.save
+    flash[:notice] = "Review has been successfully created." if @review.save
     respond_with @review, :location => [@city, @venue]
   end
 
   def update
     @review.attributes = params[:review]
-    flash[:confirm] = "Review has been successfully updated." if @review.save
+    flash[:notice] = "Review has been successfully updated." if @review.save
     respond_with @review, :location => [@city, @venue]
   end
 
   def destroy
-    flash[:confirm] = "Review has been successfully deleted." if @review.destroy
+    flash[:notice] = "Review has been successfully deleted." if @review.destroy
     respond_with @review, :location => [@city, @venue]
   end
 end

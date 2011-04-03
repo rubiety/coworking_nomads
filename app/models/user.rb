@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_many :venue_suggestions, :dependent => :nullify
   has_many :check_ins, :dependent => :destroy
 
+  validates :first_name, :last_name, :presence => true
+
   def to_s
     name
   end

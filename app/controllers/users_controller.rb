@@ -17,12 +17,12 @@ class UsersController < ApplicationController
 
   def update
     @user.attributes = params[:user]
-    flash[:confirm] = "User profile successfully updated." if @user.save
+    flash[:notice] = "User profile successfully updated." if @user.save
     respond_with @user
   end
 
   def destroy
-    flash[:confirm] = "User account has successfully been deleted." if @user.destroy
+    flash[:notice] = "User account has successfully been deleted." if @user.destroy
     respond_with @user, :location => root_path
   end
 end

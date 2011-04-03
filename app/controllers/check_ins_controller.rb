@@ -22,12 +22,12 @@ class CheckInsController < ApplicationController
   def create
     @check_in.attributes = params[:check_in]
     @check_in.user = current_user
-    flash[:confirm] = "You have successfully checked in." if @check_in.save
+    flash[:notice] = "You have successfully checked in." if @check_in.save
     respond_with @check_in, :location => [@city, @venue]
   end
 
   def destroy
-    flash[:confirm] = "You have successfully un checked in." if @check_in.destroy
+    flash[:notice] = "You have successfully un checked in." if @check_in.destroy
     respond_with @check_in, :location => [@city, @venue]
   end
 end
