@@ -1,4 +1,4 @@
 #flash
   - flash.each do |key, value|
-    %div{ :title => key.to_s.humanize, :class => key }
-      %p= value
+    %ul{ :title => key.to_s.humanize, :class => key }
+      %li= value
