@@ -5,7 +5,7 @@ $(function() {
 
 var CoworkingNomads = {
   initialize: function() {
-    if ($("body.cities section#map")) {
+    if ($("body.cities section#map")[0]) {
       CoworkingNomads.map.initialize();
     }
   },

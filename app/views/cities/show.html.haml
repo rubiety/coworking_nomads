@@ -1,6 +1,9 @@
 %h1= @city
 
 %section#map
+  = content_for :javascripts do
+    = render "layouts/google_maps_javascripts"
+
   #google-map
   
   #google-map-locations
