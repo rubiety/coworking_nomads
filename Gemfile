@@ -35,5 +35,5 @@ group :test do
   gem "guard-bundler"
   gem "guard-cucumber"
   gem "guard-rspec"
-  gem "guard-spork"
+  gem "guard-spork", :git => "https://github.com/guard/guard-spork.git" # Temporary: Solves issue with SIGQUIT on spork
 end
