@@ -15,12 +15,16 @@ CoworkingNomads::Application.routes.draw do
     end
     
     resources :venue_suggestions, :only => [:index, :new, :create]
-    resources :users
+    resources :users, :only => [:show]
   end
 
   devise_for :users
 
-  resources :users, :except => [:new, :create]
+  resources :users, :except => [:new, :create] do
+    get :change_city, :on => :member
+    get :privacy, :on => :member
+    get :cancel, :on => :member
+  end
 
   root :to => "home#index"
 end

@@ -1,0 +1,7 @@
+- if can? :manage, @user
+  %nav#user-admin
+    %ul
+      %li= link_to 'Edit Profile', [:edit, @user]
+      %li= link_to 'Change City', [:change_city, @user]
+      %li= link_to 'Privacy Settings', [:privacy, @user]
+      %li= link_to 'Delete Account', [:cancel, @user]

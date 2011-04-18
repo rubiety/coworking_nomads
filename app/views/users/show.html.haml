@@ -1,9 +1,3 @@
 %h1= @user
 
-%section#user-admin
-  %p
-    = link_to "Edit Profile", [:edit, @user]
-    = link_to "Change Password", "#"
-    = link_to "Change City", "#"
-    = link_to "Privacy Settings", "#"
-    = link_to "Delete Account", @user, :method => :delete, :confirm => "Are you sure you want to delete your account?" if can? :destroy, @user
+= render "navigation"

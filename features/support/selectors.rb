@@ -36,6 +36,10 @@ module HtmlSelectorsHelpers
     when "the reviews list"
       "section#reviews"
 
+    # User Accounts
+    when "the user navigation"
+      "#user-admin"
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

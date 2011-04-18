@@ -15,9 +15,21 @@ class UsersController < ApplicationController
     respond_with @user
   end
 
+  def change_city
+    respond_with @user
+  end
+
+  def privacy
+    respond_with @user
+  end
+
   def update
     @user.attributes = params[:user]
     flash[:notice] = "User profile successfully updated." if @user.save
+    respond_with @user
+  end
+
+  def cancel
     respond_with @user
   end
 

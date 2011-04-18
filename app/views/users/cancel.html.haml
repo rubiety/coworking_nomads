@@ -1,0 +1,21 @@
+%h1 Delete Account
+
+= render "navigation"
+
+:javascript
+  $(function() {
+    $("form#delete-form").submit(function() {
+      if (!$("#confirm_deletion").is(":checked")) {
+        alert("You must confirm deletion of your account.");
+        return false;
+      }
+    });
+  });
+
+= simple_form_for @user, :html => {:method => :delete} do |f|
+  %fieldset
+    %legend Account Deletion
+    = check_box_tag :confirm_deletion, "1"
+    I want to delete my account.
+
+  = f.submit "Delete Account"

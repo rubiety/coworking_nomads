@@ -1,14 +1,14 @@
 = simple_form_for @user do |f|
   %fieldset
     %legend Basic Information
-    = f.input :first_name
-    = f.input :last_name
+    = f.input :first_name, :label => "First Name"
+    = f.input :last_name, :label => "Last Name"
     = f.input :biography
 
   %fieldset
     %legend Contact Information
     = f.input :website
     = f.input :twitter
-    = f.input :linked_in
+    = f.input :linked_in, :label => "Linked In"
   
   = f.submit "Save Profile"

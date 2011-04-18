@@ -1,0 +1,10 @@
+%h1 Change City
+
+= render "navigation"
+
+= simple_form_for @user do |f|
+  %fieldset
+    %legend New City
+    = f.association :city, :collection => City.active, :include_blank => true
+
+  = f.submit "Change City"

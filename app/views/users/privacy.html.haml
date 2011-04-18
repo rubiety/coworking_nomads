@@ -1,0 +1,9 @@
+%h1 Privacy Settings
+
+= render "navigation"
+
+= simple_form_for @user do |f|
+  %fieldset
+    %legend Privacy Settings
+
+  = f.submit "Save"
