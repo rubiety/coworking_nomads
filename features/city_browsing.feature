@@ -1,4 +1,3 @@
-@wip
 Feature: Browsing Cities
   
   Scenario: Viewing Home Page
@@ -14,5 +13,5 @@ Feature: Browsing Cities
     And I should see "Trending Now" within the venues list
     And I should see "Near Me" within the venues list
     And I should see "Highest Rated" within the venues list
-    And I should see a map with checkins
+    And I should see a map
   

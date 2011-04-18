@@ -19,7 +19,7 @@
 %section#cities
   %ul
     - @cities.each do |city|
-      %li= link_to city, city_path(city)
+      %li.city= link_to city, city_path(city)
     %li
       Your city not here? 
       = link_to "Suggest a City", new_city_suggestion_path
