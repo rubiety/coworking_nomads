@@ -1,21 +1,24 @@
 source "http://rubygems.org"
 
 gem "rails", "3.0.6"
-gem "mysql2"
-gem "capistrano"
+gem "mysql2", "~> 0.2.7"
 
-gem "devise"
-gem "haml", ">= 3.0.0"
+gem "haml"
 gem "haml-rails"
-gem "compass", ">= 0.10.6"
+gem "compass"
 gem "html5-boilerplate"
 gem "cancan"
+
+gem "devise"
+gem "omniauth"
+
 gem "fancy-buttons"
 gem "simple_form"
 gem "paperclip"
-gem "friendly_id", "~> 3.2.1"
+gem "friendly_id"
 
 group :development do
+  gem "capistrano"
   gem "ruby-debug19"
   gem "rspec-rails", ">= 2.0.1"
 end
@@ -32,10 +35,10 @@ group :test do
   gem "factory_girl_rails"
   gem "shoulda-matchers"
   gem "growl"
-  gem "spork", ">= 0.9.0.rc4"
+  gem "spork", ">= 0.9.0.rc5"
   gem "guard"
   gem "guard-bundler"
   gem "guard-cucumber"
   gem "guard-rspec"
-  gem "guard-spork", :git => "https://github.com/guard/guard-spork.git" # Temporary: Solves issue with SIGQUIT on spork
+  gem "guard-spork"
 end
