@@ -1,0 +1,73 @@
+$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
+require 'rvm/capistrano'
+
+require 'bundler/capistrano'
+
+set :rvm_ruby_string, '1.9.2-p290@coworking_nomads'
+
+## Configuration
+set :application, "coworking_nomads"
+
+set :scm, :git
+set :repository, "git@github.com:rubiety/#{application}.git"
+set :deploy_via, :remote_cache
+set :use_sudo, false
+set :scm_verbose, true
+set :ssh_options, {:forward_agent => true}
+ssh_options[:port] = 2234
+
+task :staging do
+  role :app, ""
+  role :web, ""
+  role :db,  "", :primary => true
+    
+  set :rails_env, "staging"
+  set :branch, "master"
+  set :deploy_to, ""
+  set :user, ""
+end
+
+task :production do
+  role :app, ""
+  role :web, ""
+  role :db,  "", :primary => true
+    
+  set :rails_env, "production"
+  set :branch, "master"
+  set :deploy_to, ""
+  set :user, ""
+end
+
+set :shared_paths, %w(
+  config/database.yml
+)
+
+after "deploy:symlink", "deploy:shared"
+after "deploy:symlink", "deploy:compile_stylesheets"
+after "deploy:symlink", "deploy:migrate_database"
+
+namespace :deploy do
+  task :restart do
+    run "touch #{current_path}/tmp/restart.txt"
+  end
+  
+  task :start do
+  end
+  
+  task :stop do
+  end
+    
+  task :shared, :roles => [:app, :web] do
+    shared_paths.each do |path|
+      run "ln -nfs #{shared_path}/#{path} #{release_path}/#{path}"
+    end
+  end
+  
+  task :migrate_database, :roles => [:db] do
+    run "cd #{release_path} && export RAILS_ENV=#{rails_env} && bundle exec rake db:migrate --trace && bundle exec rake db:seed --trace"
+  end
+  
+  task :compile_stylesheets, :roles => [:app] do
+    run "cd #{release_path} && export RAILS_ENV=#{rails_env} && bundle exec compass compile"
+  end
+end
